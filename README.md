@@ -6,10 +6,13 @@ Script and dashboard for grafana
 Edit temperatureloop.sh with **sudo nano loop.sh** and change /YOUR/PATH/
 
 
-## 2. Edit python/main.py. 
+## 2. Edit loop.sh
+Put your cities in cities.txt separated with a break line.
+
+## 3. Edit python/main.py. 
 Create an account on openweathermap.org, change <YOURCITY> with the city you want to monitor and replace <YOURAPIKEY> with your apikey.
 
-## 3. Create a docker-compose.yml file
+## 4. Create a docker-compose.yml file
 
 run
 
