@@ -7,16 +7,11 @@ Edit temperatureloop.sh with **sudo nano loop.sh** and change /YOUR/PATH/
 
 ## 2. Create a docker-compose.yml file
 
-run 
-       ```shell
-       user:~/appdata$ sudo docker-compose up  
-       user:~/appdata$ sudo docker-compose start
-       ```
-       
+run
 
    ```shell
-   user:~$ cd ~/simulation_ws/src
-   user:~$ catkin_create_pkg description urdf
+   user:~/appdata$ sudo docker-compose up  
+   user:~/appdata$ sudo docker-compose start
    ```
 
 Edit python/main.py. 
