@@ -12,6 +12,12 @@ run
        user:~/appdata$ sudo docker-compose up  
        user:~/appdata$ sudo docker-compose start
        ```
+       
+
+   ```shell
+   user:~$ cd ~/simulation_ws/src
+   user:~$ catkin_create_pkg description urdf
+   ```
 
 Edit python/main.py. 
 Create an account on openweathermap.org, change <YOURCITY> with the city you want to monitor and replace <YOURAPIKEY> with your apikey.
