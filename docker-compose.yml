@@ -1,0 +1,31 @@
+
+grafana:
+  image: grafana/grafana:latest
+  container_name: grafana
+  restart: unless-stopped
+  ports:
+    - 3000:3000
+  environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Europe/London
+    - GF_SECURITY_ADMIN_USER=<YOURID>
+    - GF_SECURITY_ADMIN_PASSWORD=<PASSWORD>
+    - GF_USERS_ALLOW_SIGN_UP=false
+  volumes:
+    - <YOURPATH>/appdata/grafana/hope/:/var/lib/grafana
+
+influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    environment:
+
+      - INFLUXDB_ADMIN_ENABLED=true
+      - INFLUXDB_ADMIN_USER=martin
+      - INFLUXDB_ADMIN_PASSWORD=t3ncd6&EDYcq7be9TSjh!gRKU#3PV&
+    volumes:
+
+      - <YOURPATH>/appdata/influxdb/influx:/var/lib/influxdb
