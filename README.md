@@ -22,4 +22,4 @@ run
    ```
 
   
- Login on your grafana instance and import via pannel json the content in dashboard.json
+ Copy dashboard_weather.json and dashboard_forecast.json and paste in import it in "Import via panel json" in Grafana
