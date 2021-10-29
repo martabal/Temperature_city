@@ -63,7 +63,7 @@ for j in range(len(cities)):
 
         json_payload.append(data1)
 
-client = InfluxDBClient('localhost', 8086, 'martin', 't3ncd6&EDYcq7be9TSjh!gRKU#3PV&', 'weather')
+client = InfluxDBClient('localhost', 8086, '<YOURID>', '<YOURPASSWORD>', 'weather')
 client.create_database('weather')
 client.drop_measurement('forecast')
 client.write_points(json_payload)
