@@ -6,7 +6,7 @@ Script and dashboard for grafana
 Edit temperatureloop.sh with **sudo nano loop.sh** and change /YOUR/PATH/
 
 
-## 2. Edit loop.sh
+## 2. Edit cities.txt
 Put your cities in cities.txt separated with a break line.
 
 ## 3. Edit python/main.py. 
