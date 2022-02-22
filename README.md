@@ -1,16 +1,19 @@
 # Temperature_city
 Script and dashboard for grafana 
 
+
 ## 1. Edit loop.sh
 
-Edit temperatureloop.sh with **sudo nano loop.sh** and change /YOUR/PATH/
+Edit temperatureloop.sh with **sudo nano loop.sh** and change /YOUR/PATH/ or add python3 /YOUR/PATH/forecast.py && python3 /YOUR/PATH/present.py to your crontab file.
 
 
 ## 2. Edit cities.txt
 Put your cities in cities.txt separated with a break line.
 
+
 ## 3. Edit python/main.py. 
 Create an account on openweathermap.org, change <YOURCITY> with the city you want to monitor and replace <YOURAPIKEY> with your apikey.
+
 
 ## 4. Create a docker-compose.yml file
 
