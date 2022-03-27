@@ -1,4 +1,35 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_WEATHER",
+      "label": "weather",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "influxdb",
+      "pluginName": "InfluxDB"
+    }
+  ],
+  "__elements": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "8.4.4"
+    },
+    {
+      "type": "datasource",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -20,15 +51,17 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1635517172942,
+  "id": null,
+  "iteration": 1648387272378,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -127,14 +160,18 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "pluginVersion": "8.1.3",
-      "repeat": null,
       "targets": [
         {
           "alias": "Feels like",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_WEATHER}"
+          },
           "groupBy": [
             {
               "params": [
@@ -181,14 +218,15 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Temperature",
       "transformations": [],
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -256,11 +294,16 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_WEATHER}"
+          },
           "groupBy": [
             {
               "params": [
@@ -312,7 +355,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -389,11 +435,16 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_WEATHER}"
+          },
           "groupBy": [
             {
               "params": [
@@ -445,7 +496,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -514,12 +568,17 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "pluginVersion": "8.1.3",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_WEATHER}"
+          },
           "groupBy": [
             {
               "params": [
@@ -546,7 +605,7 @@
             [
               {
                 "params": [
-                  "temp"
+                  "wind"
                 ],
                 "type": "field"
               },
@@ -566,14 +625,15 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Wind",
       "transformations": [],
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -649,11 +709,16 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_WEATHER}"
+          },
           "groupBy": [
             {
               "params": [
@@ -705,7 +770,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -781,11 +849,16 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_WEATHER}"
+          },
           "groupBy": [
             {
               "params": [
@@ -838,25 +911,20 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 31,
+  "schemaVersion": 35,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "Paris",
-          "value": "Paris"
+        "current": {},
+        "datasource": {
+          "type": "influxdb",
+          "uid": "${DS_WEATHER}"
         },
-        "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES FROM \"forecast\" WITH KEY = \"city\"  ",
-        "description": null,
-        "error": null,
         "hide": 1,
         "includeAll": false,
-        "label": null,
         "multi": false,
         "name": "City",
         "options": [],
@@ -877,5 +945,6 @@
   "timezone": "",
   "title": "Forecast",
   "uid": "jgd8hG3",
-  "version": 9
+  "version": 6,
+  "weekStart": ""
 }
