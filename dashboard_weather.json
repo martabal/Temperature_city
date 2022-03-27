@@ -1,4 +1,47 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_WEATHER",
+      "label": "weather",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "influxdb",
+      "pluginName": "InfluxDB"
+    }
+  ],
+  "__elements": [],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "8.4.4"
+    },
+    {
+      "type": "datasource",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -20,15 +63,17 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1635516852697,
+  "id": null,
+  "iteration": 1648387274723,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -75,7 +120,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.2.2",
+      "pluginVersion": "8.4.4",
       "targets": [
         {
           "groupBy": [],
@@ -109,7 +154,10 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -156,7 +204,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.2.2",
+      "pluginVersion": "8.4.4",
       "targets": [
         {
           "groupBy": [],
@@ -194,7 +242,10 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -279,7 +330,8 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "pluginVersion": "8.1.3",
@@ -331,14 +383,15 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Wind",
       "transformations": [],
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -385,7 +438,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.2",
+      "pluginVersion": "8.4.4",
       "targets": [
         {
           "groupBy": [],
@@ -423,7 +476,10 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -470,7 +526,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.2",
+      "pluginVersion": "8.4.4",
       "targets": [
         {
           "groupBy": [],
@@ -508,7 +564,10 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -566,7 +625,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.2",
+      "pluginVersion": "8.4.4",
       "targets": [
         {
           "groupBy": [
@@ -617,7 +676,10 @@
       "type": "gauge"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -667,7 +729,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.2",
+      "pluginVersion": "8.4.4",
       "targets": [
         {
           "groupBy": [
@@ -716,7 +778,10 @@
       "type": "gauge"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -845,11 +910,11 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "pluginVersion": "8.1.3",
-      "repeat": null,
       "targets": [
         {
           "alias": "Temp",
@@ -942,109 +1007,18 @@
               "value": "/^$City$/"
             }
           ]
-        },
-        {
-          "alias": "Temp min",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "hide": false,
-          "measurement": "weather",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"temp_min\") FROM \"weather\" WHERE (\"city\" =~ /^$City$/)  GROUP BY time($__interval) ",
-          "rawQuery": false,
-          "refId": "C",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "temp_min"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "city",
-              "operator": "=~",
-              "value": "/^$City$/"
-            }
-          ]
-        },
-        {
-          "alias": "Temp max",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "hide": false,
-          "measurement": "weather",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"temp_max\") FROM \"weather\" WHERE (\"city\" =~ /^$City$/)  GROUP BY time($__interval) ",
-          "rawQuery": false,
-          "refId": "D",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "temp_max"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "city",
-              "operator": "=~",
-              "value": "/^$City$/"
-            }
-          ]
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Temperature",
       "transformations": [],
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1121,7 +1095,8 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
@@ -1171,7 +1146,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1236,7 +1214,8 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
@@ -1286,7 +1265,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_WEATHER}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1353,7 +1335,8 @@
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "none"
+          "mode": "none",
+          "sort": "none"
         }
       },
       "targets": [
@@ -1409,26 +1392,21 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "30s",
-  "schemaVersion": 31,
+  "refresh": "",
+  "schemaVersion": 35,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "Paris",
-          "value": "Paris"
+        "current": {},
+        "datasource": {
+          "type": "influxdb",
+          "uid": "${DS_WEATHER}"
         },
-        "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES WITH KEY = \"city\" ",
-        "description": null,
-        "error": null,
         "hide": 1,
         "includeAll": false,
-        "label": null,
         "multi": false,
         "name": "City",
         "options": [],
@@ -1442,12 +1420,13 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Weather",
-  "uid": "xp5qN4Inz",
-  "version": 17
+  "title": "Past",
+  "uid": "xpdgfkj4Inz",
+  "version": 3,
+  "weekStart": ""
 }
